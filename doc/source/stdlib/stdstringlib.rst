@@ -17,8 +17,8 @@ Global Symbols
 .. js:function:: endswith(str, cmp)
 
     returns `true` if the end of the string `str`  matches a the string `cmp` otherwise returns `false`
-	
-.. js:function:: ecape(str)
+
+.. js:function:: escape(str)
 
     Returns a string with backslashes before characters that need to be escaped(`\",\a,\b,\t,\n,\v,\f,\r,\\,\",\',\0,\xnn`).
 
@@ -28,8 +28,16 @@ Global Symbols
     The format string follows the same rules as the `printf` family of
     standard C functions( the "*" is not supported). ::
 
-        eg.
+        e.g.
         sq> print(format("%s %d 0x%02X\n","this is a test :",123,10));
+        this is a test : 123 0x0A
+
+.. js:function:: printf(formatstr, ...)
+
+    Just like calling `print(format(formatstr` as in the example above, but is more convenient AND more efficient. ::
+
+        e.g.
+        sq> printf("%s %d 0x%02X\n","this is a test :",123,10);
         this is a test : 123 0x0A
 
 .. js:function:: lstrip(str)
@@ -58,7 +66,7 @@ Global Symbols
 .. js:function:: startswith(str, cmp)
 
     returns `true` if the beginning of the string `str` matches the string `cmp`; otherwise returns `false`
-	
+
 .. js:function:: strip(str)
 
     Strips white-space-only characters that might appear at the beginning or end of the given string and returns the new stripped string.
@@ -150,9 +158,9 @@ The regexp class
 +---------------------+--------------------------------------+
 |      `\\C`          |  non control characters              |
 +---------------------+--------------------------------------+
-|      `\\p`          |  punctuation                          |
+|      `\\p`          |  punctuation                         |
 +---------------------+--------------------------------------+
-|      `\\P`          |  non punctuation                      |
+|      `\\P`          |  non punctuation                     |
 +---------------------+--------------------------------------+
 |      `\\b`          |  word boundary                       |
 +---------------------+--------------------------------------+
